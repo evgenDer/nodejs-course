@@ -24,9 +24,21 @@ const deleteUser = async id => {
   const deletedUser = await getUser(id);
   if (deletedUser) {
     DATA_BASE.users.splice(DATA_BASE.users.indexOf(deletedUser), 1);
+    updateUserId(id);
     return true;
   }
   return false;
+};
+
+const updateUserId = id => {
+  const arrayBoardId = Object.values(DATA_BASE.tasks);
+  arrayBoardId.forEach(board => {
+    board.map(task => {
+      if (task.userId === id) {
+        task.userId = null;
+      }
+    });
+  });
 };
 
 const getAllBoards = async () => DATA_BASE.boards.slice(0);
@@ -87,7 +99,6 @@ const updateTask = async (boardId, taskId, task) => {
 
 const deleteTask = async (boardId, taskId) => {
   const deletedTask = await getTask(boardId, taskId);
-  console.log(DATA_BASE.tasks[boardId]);
   if (deletedTask) {
     DATA_BASE.tasks[boardId].splice(
       DATA_BASE.tasks[boardId].indexOf(deletedTask),
