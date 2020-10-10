@@ -1,6 +1,6 @@
 const DATA_BASE = {
   users: [],
-  tasks: [],
+  tasks: {},
   boards: []
 };
 
@@ -35,6 +35,7 @@ const getBoard = async id => DATA_BASE.boards.filter(el => el.id === id)[0];
 
 const createBoard = async board => {
   DATA_BASE.boards.push(board);
+  DATA_BASE.tasks[board.id] = [];
   return board;
 };
 
@@ -49,6 +50,49 @@ const deleteBoard = async id => {
   const deletedBoard = await getBoard(id);
   if (deletedBoard) {
     DATA_BASE.boards.splice(DATA_BASE.boards.indexOf(deletedBoard), 1);
+    delete DATA_BASE.tasks[deletedBoard.id];
+    return true;
+  }
+  return false;
+};
+
+const getAllTasks = async boardId => {
+  const board = await getBoard(boardId);
+  if (board) {
+    return DATA_BASE.tasks[boardId];
+  }
+  return null;
+};
+
+const getTask = async (boardId, taskId) => {
+  return DATA_BASE.tasks[boardId].filter(el => el.id === taskId)[0];
+};
+
+const createTask = async (boardId, task) => {
+  const board = await getBoard(boardId);
+  if (board) {
+    DATA_BASE.tasks[boardId].push(task);
+  }
+
+  return task;
+};
+
+const updateTask = async (boardId, taskId, task) => {
+  const oldTask = await getTask(boardId, taskId);
+  const oldTaskNumber = DATA_BASE.tasks[boardId].indexOf(oldTask);
+  // eslint-disable-next-line require-atomic-updates
+  DATA_BASE.tasks[boardId][oldTaskNumber] = { ...task };
+  return getTask(boardId, taskId);
+};
+
+const deleteTask = async (boardId, taskId) => {
+  const deletedTask = await getTask(boardId, taskId);
+  console.log(DATA_BASE.tasks[boardId]);
+  if (deletedTask) {
+    DATA_BASE.tasks[boardId].splice(
+      DATA_BASE.tasks[boardId].indexOf(deletedTask),
+      1
+    );
     return true;
   }
   return false;
@@ -64,5 +108,10 @@ module.exports = {
   getAllBoards,
   createBoard,
   updateBoard,
-  deleteBoard
+  deleteBoard,
+  getTask,
+  getAllTasks,
+  createTask,
+  updateTask,
+  deleteTask
 };
