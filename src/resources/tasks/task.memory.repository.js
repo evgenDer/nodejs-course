@@ -29,7 +29,6 @@ const update = async (boardId, taskId, task) =>
 
 const remove = async (boardId, taskId) => {
   const isDeleted = await DATA_BASE.deleteTask(boardId, taskId);
-  console.log(isDeleted);
   if (!isDeleted) {
     throw new Error(
       `The task with board id: ${boardId} and task id: ${taskId} was not found`
