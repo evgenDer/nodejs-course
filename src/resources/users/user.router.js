@@ -7,12 +7,12 @@ router.route('/').get(async (req, res) => {
   res.json(users.map(User.toResponse));
 });
 
-router.route('/:id').get(async (req, res) => {
+router.route('/:id').get(async (req, res, next) => {
   try {
     const user = await usersService.get(req.params.id);
     res.json(User.toResponse(user));
   } catch (error) {
-    res.status(404).send(error.message);
+    return next(error);
   }
 });
 
@@ -29,12 +29,12 @@ router.route('/:id').put(async (req, res) => {
   res.status(200).send(User.toResponse(user));
 });
 
-router.route('/:id').delete(async (req, res) => {
+router.route('/:id').delete(async (req, res, next) => {
   try {
     await usersService.remove(req.params.id);
     res.status(204).send('Deleted');
   } catch (error) {
-    res.status(404).send(error.message);
+    return next(error);
   }
 });
 
