@@ -1,39 +1,28 @@
-const DATA_BASE = require('../../common/dataBase');
+const Task = require('./task.model');
 
-const getAll = async boardId => {
-  const allTasks = DATA_BASE.getAllTasks(boardId);
+const updateUserIDInTask = async id =>
+  Task.updateMany({ userId: id }, { userId: null });
 
-  if (!allTasks) {
-    throw new Error(`The task with board id: ${boardId} was not found`);
-  }
+const deleteTasksByBoardId = async id => Task.deleteMany({ boardId: id });
 
-  return allTasks;
-};
+const getAll = async id => Task.find(id);
 
-const get = async (boardId, taskId) => {
-  const task = await DATA_BASE.getTask(boardId, taskId);
+const get = async (boardId, taskId) => Task.findOne({ boardId, _id: taskId });
 
-  if (!task) {
-    throw new Error(
-      `The task with board id: ${boardId} and task id: ${taskId} was not found`
-    );
-  }
-
-  return task;
-};
-
-const create = async (boardId, task) => DATA_BASE.createTask(boardId, task);
+const create = async task => Task.create(task);
 
 const update = async (boardId, taskId, task) =>
-  DATA_BASE.updateTask(boardId, taskId, task);
+  Task.findOneAndUpdate({ _id: taskId }, task);
 
-const remove = async (boardId, taskId) => {
-  const isDeleted = await DATA_BASE.deleteTask(boardId, taskId);
-  if (!isDeleted) {
-    throw new Error(
-      `The task with board id: ${boardId} and task id: ${taskId} was not found`
-    );
-  }
+const remove = async (boardId, taskId) =>
+  Task.findOneAndRemove({ boardId, _id: taskId });
+
+module.exports = {
+  getAll,
+  get,
+  create,
+  update,
+  remove,
+  updateUserIDInTask,
+  deleteTasksByBoardId
 };
-
-module.exports = { getAll, get, create, update, remove };
