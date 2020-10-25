@@ -1,27 +1,16 @@
-const DATA_BASE = require('../../common/dataBase');
+const User = require('./user.model');
 
-const getAll = async () => DATA_BASE.getAllUsers();
+const getAll = async () => User.find({});
 
 const get = async id => {
-  const user = await DATA_BASE.getUser(id);
-
-  if (!user) {
-    throw new Error(`The user with id: ${id} was not found`);
-  }
-
-  return user;
+  console.log(id);
+  return User.findOne({ _id: id });
 };
 
-const create = async user => DATA_BASE.createUser(user);
+const create = async user => User.create(user);
 
-const update = async (id, user) => DATA_BASE.updateUser(id, user);
+const update = async (id, user) => User.findOneAndUpdate({ _id: id }, user);
 
-const remove = async id => {
-  const isDeleted = await DATA_BASE.deleteUser(id);
-
-  if (!isDeleted) {
-    throw new Error(`The user with id: ${id} was not found`);
-  }
-};
+const remove = async id => User.remove({ _id: id }).n !== 0;
 
 module.exports = { getAll, get, create, update, remove };
