@@ -1,0 +1,41 @@
+{"level":"error","message":"   Unhandled Rejection: DATA_BASE is not defined","timestamp":"2020-10-25T14:57:50.507Z"}
+{"level":"error","message":"   Unhandled Rejection: DATA_BASE is not defined","timestamp":"2020-10-25T14:58:16.715Z"}
+{"level":"error","message":"   Unhandled Rejection: DATA_BASE is not defined","timestamp":"2020-10-25T14:58:21.698Z"}
+{"level":"error","message":"   Unhandled Rejection: User.find is not a function","timestamp":"2020-10-25T14:59:32.000Z"}
+{"level":"error","message":"   Unhandled Rejection: Cannot destructure property 'id' of 'user' as it is undefined.","timestamp":"2020-10-25T14:59:37.461Z"}
+{"level":"error","message":"   Unhandled Rejection: Cannot destructure property 'id' of 'user' as it is undefined.","timestamp":"2020-10-25T15:00:38.202Z"}
+{"level":"error","message":"   Unhandled Rejection: failed to connect to server [localhost:27017] on first connect [Error: connect ECONNREFUSED 127.0.0.1:27017\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1137:16) {\n  name: 'MongoNetworkError'\n}]","timestamp":"2020-10-25T15:03:41.943Z"}
+{"level":"error","message":"   Uncaught Exception: connectToDB is not a function","timestamp":"2020-10-25T15:14:25.149Z"}
+{"level":"error","message":"   Uncaught Exception: connectToDB is not a function","timestamp":"2020-10-25T15:15:48.507Z"}
+{"level":"error","message":"   Uncaught Exception: connectToDB is not a function","timestamp":"2020-10-25T15:16:01.139Z"}
+{"level":"error","message":"   Uncaught Exception: connectToDB is not a function","timestamp":"2020-10-25T15:17:05.663Z"}
+{"level":"error","message":"   Unhandled Rejection: user is not allowed to do action [dropDatabase] on [test.]","timestamp":"2020-10-25T15:17:19.476Z"}
+{"level":"error","message":"   Unhandled Rejection: user is not allowed to do action [dropDatabase] on [test.]","timestamp":"2020-10-25T15:18:37.722Z"}
+{"level":"error","message":"   Unhandled Rejection: user is not allowed to do action [dropDatabase] on [test.]","timestamp":"2020-10-25T15:18:49.987Z"}
+{"level":"error","message":"   Unhandled Rejection: Cannot destructure property 'id' of 'user' as it is undefined.","timestamp":"2020-10-25T15:23:51.196Z"}
+{"level":"error","message":"   Unhandled Rejection: Cannot destructure property 'id' of 'user' as it is undefined.","timestamp":"2020-10-25T15:25:29.788Z"}
+{"level":"error","message":"   Unhandled Rejection: Cannot destructure property 'id' of 'user' as it is undefined.","timestamp":"2020-10-25T15:27:38.452Z"}
+{"level":"error","message":"   Unhandled Rejection: Cannot destructure property 'id' of 'user' as it is undefined.","timestamp":"2020-10-25T15:28:19.181Z"}
+{"level":"error","message":"   Unhandled Rejection: Cannot destructure property 'id' of 'user' as it is undefined.","timestamp":"2020-10-25T15:31:21.071Z"}
+{"level":"error","message":"   Unhandled Rejection: Performing an update on the path '_id' would modify the immutable field '_id'","timestamp":"2020-10-25T15:38:52.224Z"}
+{"level":"error","message":"   Unhandled Rejection: Performing an update on the path '_id' would modify the immutable field '_id'","timestamp":"2020-10-25T15:39:54.789Z"}
+{"level":"error","message":"   Unhandled Rejection: Performing an update on the path '_id' would modify the immutable field '_id'","timestamp":"2020-10-25T15:41:20.717Z"}
+{"level":"error","message":"   Unhandled Rejection: Parameter \"filter\" to find() must be an object, got 0653eb13-c214-43fb-806d-a01bea64d7c2","timestamp":"2020-10-25T16:00:33.548Z"}
+{"level":"error","message":"   Unhandled Rejection: Parameter \"filter\" to find() must be an object, got 0653eb13-c214-43fb-806d-a01bea64d7c2","timestamp":"2020-10-25T16:00:38.560Z"}
+{"level":"error","message":"   Unhandled Rejection: Parameter \"filter\" to find() must be an object, got 653685b6-6120-4862-8a08-42770f81d63b","timestamp":"2020-10-25T16:01:49.604Z"}
+{"level":"error","message":"   Unhandled Rejection: Parameter \"filter\" to find() must be an object, got 653685b6-6120-4862-8a08-42770f81d63b","timestamp":"2020-10-25T16:01:54.628Z"}
+{"level":"error","message":"   Unhandled Rejection: Parameter \"filter\" to find() must be an object, got d450c133-f640-4cff-ae38-c91f7bb7a6f2","timestamp":"2020-10-25T16:04:54.338Z"}
+{"level":"error","message":"   Unhandled Rejection: Parameter \"filter\" to find() must be an object, got d450c133-f640-4cff-ae38-c91f7bb7a6f2","timestamp":"2020-10-25T16:04:59.349Z"}
+{"level":"error","message":"   Unhandled Rejection: Parameter \"filter\" to find() must be an object, got 8225b6f3-ef75-4d72-b026-54140cb2da40","timestamp":"2020-10-25T16:06:36.415Z"}
+{"level":"error","message":"   Unhandled Rejection: Parameter \"filter\" to find() must be an object, got 8225b6f3-ef75-4d72-b026-54140cb2da40","timestamp":"2020-10-25T16:06:41.420Z"}
+{"level":"error","message":"   Uncaught Exception: null","timestamp":"2020-10-25T16:33:04.216Z"}
+{"level":"error","message":"   Uncaught Exception: null","timestamp":"2020-10-25T16:33:04.677Z"}
+{"level":"error","message":"   Uncaught Exception: null","timestamp":"2020-10-25T16:35:11.734Z"}
+{"level":"error","message":"   Uncaught Exception: null","timestamp":"2020-10-25T16:35:12.161Z"}
+{"level":"error","message":"   Uncaught Exception: null","timestamp":"2020-10-25T16:36:02.781Z"}
+{"level":"error","message":"   Uncaught Exception: null","timestamp":"2020-10-25T16:36:03.215Z"}
+{"level":"error","message":"   Unhandled Rejection: Cannot destructure property 'id' of 'board' as it is undefined.","timestamp":"2020-10-25T17:01:30.829Z"}
+{"level":"error","message":"   Unhandled Rejection: Cannot destructure property 'id' of 'board' as it is undefined.","timestamp":"2020-10-25T17:02:12.054Z"}
+{"level":"error","message":"   Unhandled Rejection: tasksService.deleteUsertasks is not a function","timestamp":"2020-10-25T17:36:31.397Z"}
+{"level":"error","message":"   Unhandled Rejection: tasksService.deleteUsertasks is not a function","timestamp":"2020-10-25T17:37:45.433Z"}
+{"level":"error","message":"   Unhandled Rejection: Task.getAll is not a function","timestamp":"2020-10-25T17:47:19.821Z"}
