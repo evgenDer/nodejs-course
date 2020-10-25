@@ -1,27 +1,13 @@
-const DATA_BASE = require('../../common/dataBase');
+const Board = require('./board.model');
 
-const getAll = async () => DATA_BASE.getAllBoards();
+const getAll = async () => Board.find({});
 
-const get = async id => {
-  const board = await DATA_BASE.getBoard(id);
+const get = async id => Board.findOne({ _id: id });
 
-  if (!board) {
-    throw new Error(`The board with id: ${id} was not found`);
-  }
+const create = async board => Board.create(board);
 
-  return board;
-};
+const update = async (id, board) => Board.findOneAndUpdate({ _id: id }, board);
 
-const create = async board => DATA_BASE.createBoard(board);
-
-const update = async (id, board) => DATA_BASE.updateBoard(id, board);
-
-const remove = async id => {
-  const isDeleted = await DATA_BASE.deleteBoard(id);
-
-  if (!isDeleted) {
-    throw new Error(`The board with id: ${id} was not found`);
-  }
-};
+const remove = async id => Board.remove({ _id: id });
 
 module.exports = { getAll, get, create, update, remove };

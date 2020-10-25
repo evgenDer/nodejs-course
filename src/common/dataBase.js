@@ -4,6 +4,25 @@ const DATA_BASE = {
   boards: []
 };
 
+const mongoose = require('mongoose');
+const { MONGO_CONNECTION_STRING } = require('../common/config');
+
+const connectToDB = cb => {
+  mongoose.connect(MONGO_CONNECTION_STRING, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+  });
+
+  const db = mongoose.connection;
+
+  db.on('error', console.error.bind(console, 'connection error:'));
+  db.once('open', () => {
+    console.log('Connected!');
+    cb();
+  });
+};
+
 const getAllUsers = async () => DATA_BASE.users.slice(0);
 
 const getUser = async id => DATA_BASE.users.filter(el => el.id === id)[0];
@@ -124,5 +143,6 @@ module.exports = {
   getAllTasks,
   createTask,
   updateTask,
-  deleteTask
+  deleteTask,
+  connectToDB
 };
