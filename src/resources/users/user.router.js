@@ -30,7 +30,7 @@ router.route('/:id').put(async (req, res) => {
 router.route('/:id').delete(async (req, res, next) => {
   try {
     await usersService.remove(req.params.id);
-    tasksService.updateUserIDInTask(req.params.id);
+    await tasksService.updateUserIDInTask(req.params.id);
     res.status(204).send('Deleted');
   } catch (error) {
     return next(error);
